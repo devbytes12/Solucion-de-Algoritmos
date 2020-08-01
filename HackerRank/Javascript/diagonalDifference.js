@@ -23,3 +23,24 @@ for (let i = 0; i < n; i++){
     arr[i] = arr[i].split(' ').map(arrTemp => parseInt(arrTemp,10));
 }
 console.log(diagonalDifference(arr));
+
+
+
+
+
+/**georgedelaselva12 solution **/
+
+
+
+function compareTriplets(a, b) {
+
+    let awards=[0,0]
+
+    a.forEach((val,index)=>{
+        if(b[index]==a[index]) return false
+       return val>b[index] ? awards[0]++ : awards[1]++;
+    })
+
+    return awards
+}
+
