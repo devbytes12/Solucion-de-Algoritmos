@@ -23,3 +23,34 @@ for (let i = 0; i < n; i++){
     arr[i] = arr[i].split(' ').map(arrTemp => parseInt(arrTemp,10));
 }
 console.log(diagonalDifference(arr));
+
+
+
+
+/** by georgedelaselva12 **/
+
+function diagonalDifference(arr) {
+    // Write your code here
+    const matrixLength = arr.length;
+    const diagonalA = []
+    const diagonalB = []
+    let diagonalAsum=0;
+    let diagonalBsum =0;
+    let indexA=0;
+    let indexB=matrixLength-1;
+
+    let diagonalsDiferences = 0;
+
+    arr.forEach((el,index)=>{
+        diagonalA.push(el[indexA]);
+        diagonalB.push(el[indexB]);
+        indexA++;
+        indexB--;
+    })
+    
+    
+    diagonalA.forEach(val=>diagonalAsum+=val)
+    diagonalB.forEach(val=>diagonalBsum+=val)
+
+    return Math.abs(diagonalAsum-diagonalBsum);
+}
